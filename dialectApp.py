@@ -61,13 +61,14 @@ st.markdown("<p style='font-size: 28px; text-align: center;'>Choose a model and 
 # Dropdown for model selection with custom styling
 st.markdown("<p style='font-size: 24px; text-align: center;'>Choose a Model</p>", unsafe_allow_html=True)
 model_choice = st.selectbox(
-    "",
-    ("Logistic Regression", "Logistic Regression with Weighted Classes", "Naive Bayes with Weighted Classes", "Deep Learning Model")
+    "Model Choice",  # Providing a non-empty label
+    ("Logistic Regression", "Logistic Regression with Weighted Classes", "Naive Bayes with Weighted Classes", "Deep Learning Model"),
+    label_visibility="collapsed"
 )
 
 # Input text from user with custom styling
 st.markdown("<p style='font-size: 24px; text-align: center;'>Enter text to predict its dialect</p>", unsafe_allow_html=True)
-user_input = st.text_area("", "")
+user_input = st.text_area("Input Text", "", label_visibility="collapsed")
 
 # Button to make predictions
 if st.button("Predict"):
@@ -116,4 +117,3 @@ if st.button("Predict"):
         st.pyplot(fig)
     else:
         st.write("Please enter text to predict its dialect.")
-
