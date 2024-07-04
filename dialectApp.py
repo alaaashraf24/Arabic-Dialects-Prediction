@@ -7,7 +7,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-@st.experimental_singleton
+# Set up Streamlit app configuration
+st.set_page_config(layout="centered")
+
+# Cache models and vectorizer
+@st.cache_resource
 def load_models():
     log_reg = joblib.load('log_reg_model.pkl')
     log_reg_weighted = joblib.load('log_reg_weighted_model.pkl')
@@ -23,9 +27,6 @@ log_reg, log_reg_weighted, nb_model_weighted, deep_learning_model, tfidf_vectori
 target_labels = ['EG', 'LB', 'LY', 'MA', 'SD']
 target_names = ['Egypt', 'Lebanon', 'Libya', 'Morocco', 'Sudan']
 label_name_mapping = dict(zip(target_labels, target_names))
-
-# Set up Streamlit app
-st.set_page_config(layout="centered")
 
 # Adding background image using custom CSS
 st.markdown(
@@ -61,7 +62,7 @@ st.markdown("<p style='font-size: 28px; text-align: center;'>Choose a model and 
 st.markdown("<p style='font-size: 24px; text-align: center;'>Choose a Model</p>", unsafe_allow_html=True)
 model_choice = st.selectbox(
     "",
-    ("Logistic Regression", "Logistic Regression with Weighted Classes", "Naive Bayes with Weighted Classes", "Deep Learning")
+    ("Logistic Regression", "Logistic Regression with Weighted Classes", "Naive Bayes with Weighted Classes", "Deep Learning Model")
 )
 
 # Input text from user with custom styling
@@ -85,7 +86,7 @@ if st.button("Predict"):
 
             y_pred_proba = model.predict_proba(X_input)[0]
 
-        elif model_choice == "Deep Learning":
+        elif model_choice == "Deep Learning Model":
             # Ensure the input shape matches the deep learning model's expected input shape
             X_input_dl = X_input.toarray()
             if X_input_dl.shape[1] != deep_learning_model.input_shape[1]:
@@ -115,3 +116,4 @@ if st.button("Predict"):
         st.pyplot(fig)
     else:
         st.write("Please enter text to predict its dialect.")
+
