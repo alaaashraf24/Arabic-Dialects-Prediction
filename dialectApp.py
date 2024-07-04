@@ -7,14 +7,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-# Load models
-log_reg = joblib.load('log_reg_model.pkl')
-log_reg_weighted = joblib.load('log_reg_weighted_model.pkl')
-nb_model_weighted = joblib.load('nb_model_weighted.pkl')
-deep_learning_model = load_model('deep_learning_model.h5')
+@st.experimental_singleton
+def load_models():
+    log_reg = joblib.load('log_reg_model.pkl')
+    log_reg_weighted = joblib.load('log_reg_weighted_model.pkl')
+    nb_model_weighted = joblib.load('nb_model_weighted.pkl')
+    deep_learning_model = load_model('deep_learning_model.h5')
+    tfidf_vectorizer = joblib.load('tfidf_vectorizer.pkl')
+    return log_reg, log_reg_weighted, nb_model_weighted, deep_learning_model, tfidf_vectorizer
 
-# Load the TF-IDF vectorizer used during training
-tfidf_vectorizer = joblib.load('tfidf_vectorizer.pkl')
+# Load models
+log_reg, log_reg_weighted, nb_model_weighted, deep_learning_model, tfidf_vectorizer = load_models()
 
 # Define target labels and their names
 target_labels = ['EG', 'LB', 'LY', 'MA', 'SD']
@@ -95,27 +98,20 @@ if st.button("Predict"):
                     X_input_dl = np.pad(X_input_dl, ((0, 0), (0, padding)), 'constant')
 
             y_pred_proba = deep_learning_model.predict(X_input_dl)[0]
-        
+
         # Get the predicted dialect
         predicted_dialect = label_name_mapping[target_labels[np.argmax(y_pred_proba)]]
 
         # Display the result with controlled size
         st.markdown(f"<h1 style='font-size:26px;'>Predicted Dialect: {predicted_dialect}</h1>", unsafe_allow_html=True)
-        
+
         # Plot the probabilities
         fig, ax = plt.subplots()
         sns.barplot(x=target_names, y=y_pred_proba, ax=ax)
         ax.set_xlabel("Dialect")
         ax.set_ylabel("Probability")
         ax.set_title("Dialect Prediction Probabilities")
-        
+
         st.pyplot(fig)
     else:
         st.write("Please enter text to predict its dialect.")
-
-
-
-
-
-
-
