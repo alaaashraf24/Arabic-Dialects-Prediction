@@ -98,9 +98,9 @@ if st.button("Predict"):
         
         # Get the predicted dialect
         predicted_dialect = label_name_mapping[target_labels[np.argmax(y_pred_proba)]]
-        
-        # Display the result
-        st.write(f"Predicted Dialect: {predicted_dialect}")
+
+        # Display the result with controlled size
+        st.markdown(f"<h1 style='font-size:26px;'>Predicted Dialect: {predicted_dialect}</h1>", unsafe_allow_html=True)
         
         # Plot the probabilities
         fig, ax = plt.subplots()
