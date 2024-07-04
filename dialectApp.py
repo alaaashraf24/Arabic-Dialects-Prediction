@@ -52,7 +52,7 @@ st.markdown(
 st.markdown("<h1 style='font-size: 55px; text-align: center;'>Arabic Dialects Prediction</h1>", unsafe_allow_html=True)
 
 # Description text
-st.markdown("<p style='font-size: 28px; text-align: center;'>Choose a model and enter text to predict its dialect.</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 28px; text-align: center;'>Choose a model and enter text to predict its dialect</p>", unsafe_allow_html=True)
 
 # Dropdown for model selection with custom styling
 st.markdown("<p style='font-size: 24px; text-align: center;'>Choose a Model</p>", unsafe_allow_html=True)
@@ -62,7 +62,7 @@ model_choice = st.selectbox(
 )
 
 # Input text from user with custom styling
-st.markdown("<p style='font-size: 24px; text-align: center;'>Enter text to predict its dialect:</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 24px; text-align: center;'>Enter text to predict its dialect</p>", unsafe_allow_html=True)
 user_input = st.text_area("", "")
 
 # Button to make predictions
