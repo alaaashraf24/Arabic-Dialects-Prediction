@@ -6,9 +6,6 @@
 
 This repository contains code and resources for predicting Arabic dialects using machine learning models. The goal is to build models that predict the dialect of Arabic text from various countries in the Middle East and North Africa region.
 
-### Project Objective
-
-The goal is to build models that predict the dialect of Arabic text. Since each country has its own unique dialect, this project focuses on identifying the dialect given the input text.
 
 ## Table of Contents
 
