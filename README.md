@@ -4,8 +4,6 @@
 
 This repository contains code and resources for predicting Arabic dialects using machine learning models. The project includes data fetching, preprocessing, model training, and deployment scripts. You can try the Arabic Dialects Prediction app [here](https://arabic-dialects-prediction-app.streamlit.app/).
 
-![App Screenshot](https://drive.google.com/file/d/1tNzNNJbGNfIpVFHIiC26NvCGVGnBJxSF/view?usp=sharing)
-
 ## Table of Contents
 
 - [Installation](#installation)
