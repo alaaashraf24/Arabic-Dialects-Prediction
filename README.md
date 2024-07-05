@@ -68,19 +68,19 @@ The models were evaluated on a test set, and the results are as follows:
 
 ### Logistic Regression:
 - Accuracy: 82%
-- F1-Score: Y%
+- F1-Score: 79%
 
 ### Weighted Logistic Regression:
 - Accuracy: 81%
-- F1-Score: Y%
+- F1-Score: 78%
 
 ### Naive Bayes:
 - Accuracy: 81%
-- F1-Score: Y%
+- F1-Score: 77%
 
 ### Deep Learning Model:
 - Accuracy: 39%
-- F1-Score: Y%
+- F1-Score: 11%
 
 ## Contributing
 
