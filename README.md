@@ -67,22 +67,20 @@ Use `dialectApp.py` to deploy the model using Streamlit.
 The models were evaluated on a test set, and the results are as follows:
 
 ### Logistic Regression:
-- Accuracy: X%
+- Accuracy: 82%
 - F1-Score: Y%
 
 ### Weighted Logistic Regression:
-- Accuracy: X%
+- Accuracy: 81%
 - F1-Score: Y%
 
 ### Naive Bayes:
-- Accuracy: X%
+- Accuracy: 81%
 - F1-Score: Y%
 
 ### Deep Learning Model:
-- Accuracy: X%
+- Accuracy: 39%
 - F1-Score: Y%
-
-The deep learning model showed the best performance with the highest accuracy and F1-Score.
 
 ## Contributing
 
