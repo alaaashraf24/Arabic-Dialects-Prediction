@@ -4,8 +4,9 @@
 
 ## Overview
 
-This repository contains code and resources for predicting Arabic dialects using machine learning models. The goal is to build models that predict the dialect of Arabic text from various countries in the Middle East and North Africa region.
+This repository contains code and resources for predicting Arabic dialects using machine learning models. The project includes data fetching, preprocessing, model training, and deployment scripts. You can try the Arabic Dialects Prediction app [here](https://arabic-dialects-prediction-app.streamlit.app/).
 
+![App Screenshot](https://yourappimageurl.com)
 
 ## Table of Contents
 
@@ -20,46 +21,48 @@ This repository contains code and resources for predicting Arabic dialects using
 ## Installation
 
 1. Clone the repository:
-    ```bash
+    
+bash
     git clone https://github.com/alaaashraf24/Arabic-Dialects-Prediction.git
     cd Arabic-Dialects-Prediction
-    ```
+
 
 2. Install the required packages:
-    ```bash
+    
+bash
     pip install -r requirements.txt
-    ```
+
 
 ## Data
 
-The dataset used for training the models is `preprocessed_dialects_data.csv`. It contains text samples labeled with their corresponding dialects.
+The dataset used for training the models is preprocessed_dialects_data.csv. It contains text samples labeled with their corresponding dialects.
 
 ## Models
 
 The repository includes several models:
 
-- Logistic Regression (`log_reg_model.pkl`)
-- Weighted Logistic Regression (`log_reg_weighted_model.pkl`)
-- Naive Bayes (`nb_model_weighted.pkl`)
-- Deep Learning Model (`deep_learning_model.h5`)
+- Logistic Regression (log_reg_model.pkl)
+- Weighted Logistic Regression (log_reg_weighted_model.pkl)
+- Naive Bayes (nb_model_weighted.pkl)
+- Deep Learning Model (deep_learning_model.h5)
 
 ## Usage
 
 ### Data Fetching:
 
-Run `data_fetching.ipynb` to fetch and prepare the dataset.
+Run data_fetching.ipynb to fetch and prepare the dataset.
 
 ### Data Preprocessing:
 
-Use `data_preprocessing.ipynb` for data cleaning and preprocessing.
+Use data_preprocessing.ipynb for data cleaning and preprocessing.
 
 ### Model Training:
 
-Execute `models_training.ipynb` to train the models.
+Execute models_training.ipynb to train the models.
 
 ### App Deployment:
 
-Use `dialectApp.py` to deploy the model using Streamlit.
+Use dialectApp.py to deploy the model using Streamlit.
 
 ## Results and Performance
 
